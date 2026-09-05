@@ -1,0 +1,17 @@
+# Données brutes (retéléchargeables depuis GEO GSE12241)
+data/
+*.gz
+*.bed
+*.wig
+*.bam
+*.sam
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# macOS
+.DS_Store
