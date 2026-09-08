@@ -4,27 +4,27 @@ from preprocessing import comptages, CHR19_LENGTH, BIN_SIZE
 
 ETA = 0.7
 M = CHR19_LENGTH // BIN_SIZE + 1      # 61 322 bins
-SEUIL_F = 2 / (M * ETA)               # 4,659e-05
+SEUIL_F = 2 / (M * ETA)               # 4,659e-05 
 
-"""Score F : enrichissement combiné, normalisé par la profondeur."""
+# Definition du Score F : enrichissement combiné, normalisé par la profondeur. 
+#selon l'article  scoreF d'un BIN = x1/n1 + x2/n2
 def f_score(x1, x2):
     return x1 / x1.sum() + x2 / x2.sum()
 
-"""Masque : ce bin porte-t-il assez de signal pour être analysé ?"""
+#Masque : ce bin porte-t-il assez de signal pour être analysé ?
 def bins_retenus(x1, x2):
     return f_score(x1, x2) > SEUIL_F
 
 
 MAX_GAP = 1        # bins non retenus tolérés à l'intérieur d'une région
 
-
+#Fusionne les bins retenus en régions continues (début, fin), fin exclue.
 def merge_regions(masque, max_gap=MAX_GAP):
-    """Fusionne les bins retenus en régions continues (début, fin), fin exclue."""
     idx = np.arange(len(masque))[masque]                    # numéros des bins retenus
     if idx.size == 0:
         return []
 
-    ecarts = np.diff(idx)                                   # distance entre bins retenus voisins
+    ecarts = np.diff(idx)                      # distance entre bins retenus voisins
     coupures = np.arange(len(ecarts))[ecarts > max_gap + 1]
 
     debuts = np.concatenate(([idx[0]], idx[coupures + 1]))
