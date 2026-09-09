@@ -27,7 +27,7 @@ n_retenus = int(masque.sum())       # nombre de True
 
 # Masque des bins couverts par les regions candidates. Il y en a plus que de
 # bins retenus : la fusion avale les trous d'un bin. C'est ce que voit le HMM.
-dans_regions = np.zeros(m, dtype=bool).   # tout a False, longueur du chromosome
+dans_regions = np.zeros(m, dtype=bool)   # tout a False, longueur du chromosome
 for d, f in regions:
     dans_regions[d:f] = True            # on allume la tranche de chaque region
 
