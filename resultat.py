@@ -1,4 +1,4 @@
-# main.py — reproduit les chiffres de la section Resultats du rapport.
+# resultat.py — reproduit les chiffres de la section Resultats du rapport.
 # affiche leurs sorties dans l'ordre du rapport.
 
 
