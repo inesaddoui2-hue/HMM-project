@@ -145,4 +145,3 @@ plt.ylabel("log2 fold-change ES / NP")
 plt.tight_layout()
 plt.savefig("figure1.png", dpi=300)
 
-print(f"\nfigure1.png enregistree  ({len(idx):,} bins)")
