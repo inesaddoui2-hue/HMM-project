@@ -1,16 +1,4 @@
-# ---------------------------------------------------------------------------
-# [Fichier genere par Claude — reference, a recopier, pas a lancer]
-#
-# hmm.py — section 2.3 du papier ChIPDiff (Xu et al. 2008).
-#
-# Assemble les trois pieces :
-#
-#     emission.py     l'equation 4, specifique a ChIPDiff        <- ecrit par nous
-#     hmmlearn        forward-backward et Baum-Welch             <- bibliotheque
-#     ce fichier      le branchement, le seuil rho, la fusion    <- ecrit par nous
-#
-# L'ADAPTATEUR
-# ------------
+# JE me suis aidée d'ue CLaude Code , pour ecrire cette partie
 # hmmlearn calcule normalement les emissions lui-meme, a partir d'observations
 # et d'une loi parametrique (gaussienne, multinomiale...). Aucune de ces lois ne
 # correspond a l'equation 4.
