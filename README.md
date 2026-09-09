@@ -73,6 +73,14 @@ Sortie : liste de `(début_bin, fin_bin, état)`.
 Les trois états : `a0` non différentiel, `a1` enrichi ES, `a2` enrichi NP.
 
 ## Exécution
+Pour reproduire tous les résultats du rapport :
+
+```
+python resultat.py
+```
+
+Chaque module peut aussi se lancer seul, ce qui permet de vérifier une étape
+sans relancer le reste :
 
 ```
 python readfile.py
@@ -80,8 +88,8 @@ python preprocessing.py
 python scoreF.py
 python emission.py
 python chipdiff.py
+python FCbay.py
 ```
-
 Chaque script a un bloc `if __name__ == "__main__"` qui affiche ses sorties
 intermédiaires, ce qui permet de vérifier une étape sans lancer tout le reste.
 `python FCbay.py` se lance quand on veut, indépendamment.
