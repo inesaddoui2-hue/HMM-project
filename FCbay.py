@@ -1,3 +1,21 @@
+"""
+Comparaison quantitative de l'intensite de modification par fold-change,
+avec correction bayesienne. Section 2.2 du papier.
+
+        E(p1 | x1)       (alpha + x1) (alpha + beta + n2)
+     ---------------  =  --------------------------------
+        E(p2 | x2)       (alpha + x2) (alpha + beta + n1)
+
+alpha = 1, beta = m (le nombre de bins).
+"""
+
+import numpy as np
+import pandas as pd
+
+from preprocessing import comptages, BIN_SIZE
+
+ALPHA = 1.0        # prior Beta, section 2.2
+TAU = 3.0          # seuil de fold-change, section 3.1
 # Rapport brut des comptages, sans correction.
 # Renvoie inf quand x2 vaut 0 et NaN quand les deux valent 0 :
 # c'est le defaut qu'on veut montrer, on le laisse apparaitre.
