@@ -90,9 +90,8 @@ def etats_seuilles(gamma, rho=RHO):
 # Regroupe les bins differentiels consecutifs de MEME sens.
 #
 # "Consecutive DHMSs with no gap between them were merged into DHMS regions"
-# (section 2.3). Contrairement a la fusion du score F, aucun trou n'est tolere
-# ici.
-#
+# Contrairement a la fusion du score F, aucun trou n'est tolere ici.
+
 # Retour
 #   liste de (debut, fin, etat), en indices de bins du chromosome, fin exclue.
 def fusionner_dhms(etats, decalage=0):
