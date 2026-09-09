@@ -1,5 +1,4 @@
 # ---------------------------------------------------------------------------
-# [Fichier genere par Claude — reference, a recopier, pas a lancer]
 #
 # emission.py — equation 4 du papier ChIPDiff (Xu et al. 2008, section 2.3).
 #
