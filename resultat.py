@@ -132,9 +132,7 @@ print(f"  bins du fold-change ecartes par le HMM    {ecartes:,}")
 # Figure 1 : RI-plot, reproduction de la Figure 1b de l'article
 # ===========================================================================
 
-# Aux faibles couvertures le log-ratio part dans tous les sens et franchit le
-# seuil par hasard ; aux fortes il reste serre autour de zero. C'est cet effet
-# d'entonnoir que le HMM corrige en exigeant que les voisins confirment.
+
 idx = np.flatnonzero(dans_regions)
 
 plt.figure(figsize=(6, 4.5))
